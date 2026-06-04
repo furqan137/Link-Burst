@@ -4,24 +4,25 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'LinkBurst - The Ultimate Puzzle Game',
-  description: 'Experience infinite fun with LinkBurst. Connect colorful tiles, unlock boosters, and become a puzzle master!',
-  generator: 'v0.app',
+  description:
+    'Experience infinite fun with LinkBurst. Connect colorful tiles, unlock boosters, and become a puzzle master!',
+
   icons: {
-    icon: [
-      {
-        url: '/logo.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/logo.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/logo.png',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: '/logo.png',
+    shortcut: '/logo.png',
     apple: '/logo.png',
+  },
+
+  openGraph: {
+    title: 'LinkBurst - The Ultimate Puzzle Game',
+    description:
+      'Experience infinite fun with LinkBurst. Connect colorful tiles, unlock boosters, and become a puzzle master!',
+    images: ['/logo.png'],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/logo.png'],
   },
 }
 
