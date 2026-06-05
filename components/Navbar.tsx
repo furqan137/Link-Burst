@@ -12,12 +12,13 @@ const APK_URL =
 'https://github.com/furqan137/LinkBurst/releases/download/v1.0.0/LinkBurst_Game.apk'
 
 const navLinks = [
-{ name: 'Features', href: '#features' },
-{ name: 'Gameplay', href: '#gameplay' },
-{ name: 'Levels', href: '#levels' },
-{ name: 'Rewards', href: '#rewards' },
-{ name: 'Reviews', href: '#reviews' },
-{ name: 'FAQ', href: '#faq' },
+  { name: 'Features', href: '#features' },
+  { name: 'Gameplay', href: '#gameplay' },
+  { name: 'Levels', href: '#levels' },
+  { name: 'Rewards', href: '#rewards' },
+  { name: 'Reviews', href: '#reviews' },
+  { name: 'FAQ', href: '#faq' },
+  { name: 'Privacy', href: '/privacy' },
 ]
 
 const scrollToSection = (href: string) => {
@@ -69,15 +70,25 @@ className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0a0a14]
 
       {/* Desktop Navigation */}
       <div className="hidden items-center gap-8 md:flex">
-        {navLinks.map((link) => (
-          <button
-            key={link.name}
-            onClick={() => scrollToSection(link.href)}
-            className="text-sm font-medium text-gray-300 transition-colors hover:text-white"
-          >
-            {link.name}
-          </button>
-        ))}
+       {navLinks.map((link) =>
+  link.href.startsWith('/') ? (
+    <a
+      key={link.name}
+      href={link.href}
+      className="text-sm font-medium text-gray-300 transition-colors hover:text-white"
+    >
+      {link.name}
+    </a>
+  ) : (
+    <button
+      key={link.name}
+      onClick={() => scrollToSection(link.href)}
+      className="text-sm font-medium text-gray-300 transition-colors hover:text-white"
+    >
+      {link.name}
+    </button>
+  )
+)}
       </div>
 
       {/* Desktop Download */}
@@ -112,15 +123,25 @@ className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0a0a14]
         className="border-t border-white/10 md:hidden"
       >
         <div className="space-y-1 px-2 pt-3 pb-4">
-          {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => scrollToSection(link.href)}
-              className="block w-full rounded-lg px-3 py-3 text-left text-sm text-gray-300 transition-colors hover:bg-white/5 hover:text-white"
-            >
-              {link.name}
-            </button>
-          ))}
+         {navLinks.map((link) =>
+  link.href.startsWith('/') ? (
+    <a
+      key={link.name}
+      href={link.href}
+      className="block w-full rounded-lg px-3 py-3 text-left text-sm text-gray-300 hover:bg-white/5 hover:text-white"
+    >
+      {link.name}
+    </a>
+  ) : (
+    <button
+      key={link.name}
+      onClick={() => scrollToSection(link.href)}
+      className="block w-full rounded-lg px-3 py-3 text-left text-sm text-gray-300 hover:bg-white/5 hover:text-white"
+    >
+      {link.name}
+    </button>
+  )
+)}
 
           <a
             href={APK_URL}
